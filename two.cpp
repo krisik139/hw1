@@ -35,7 +35,7 @@ bool checkDraw(const std::vector<char>& board) {
     return true;
 }
 
-int main() {
+int main6() {
     char playAgain = 'y';
 
     do {
@@ -45,11 +45,11 @@ int main() {
 
         while (!gameOver) {
             drawBord(board);
-            std::cout << "Гравець [" << currentPlayer << "], оберіть номер клітинки (1-9): ";
+            std::cout << "Ігрок [" << currentPlayer << "], оберіть номер клітинки (1-9): ";
 
             int choice;
             if (!(std::cin >> choice) || choice < 1 || choice > 9) {
-                std::cout << "Некоректний ввід! Введіть число від 1 до 9.\n";
+                std::cout << "Нізя! Введіть число від 1 до 9.\n";
                 std::cin.clear();
                 std::cin.ignore(10000, '\n');
                 continue;
@@ -66,7 +66,7 @@ int main() {
 
             if (watchWin(board, currentPlayer)) {
                 drawBord(board);
-                std::cout << "Переміг гравець " << currentPlayer << "!\n";
+                std::cout << "Переміг ігрок " << currentPlayer << "!\n";
                 gameOver = true;
             } else if (checkDraw(board)) {
                 drawBord(board);
